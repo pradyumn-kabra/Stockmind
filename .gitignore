@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+.next/
+out/
+target/
+
+# Environment variables & secrets
+.env
+.env*.local
+*.local
+start-supabase.sh
+application-*.properties
+!application.properties
+!backend/src/main/resources/application-prod.properties
+
+# Logs & temp files
+*.log
+*.tsbuildinfo
+.DS_Store
+.idea/
+*.iml
