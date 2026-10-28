@@ -1,0 +1,11 @@
+#!/bin/sh
+export JAVA_HOME="${JAVA_HOME:-/Library/Java/JavaVirtualMachines/jdk-24.jdk/Contents/Home}"
+MAVEN_BIN="/Users/admin/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3/bin/mvn"
+if [ -x "$MAVEN_BIN" ]; then
+    exec "$MAVEN_BIN" "$@"
+elif command -v mvn >/dev/null 2>&1; then
+    exec mvn "$@"
+else
+    echo "Error: Maven not found." >&2
+    exit 1
+fi

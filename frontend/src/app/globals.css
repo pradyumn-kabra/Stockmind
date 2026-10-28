@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8F6F2;
+  --foreground: #171512;
+  --text-muted: #71685D;
+  --brown-primary: #795548;
+  --brown-dark: #4E342E;
+  --brown-light: #A88970;
+  --beige-soft: #EDE4D9;
+  --border-warm: #E8E0D6;
+  --surface-muted: #F3EEE7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Motion System */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes rotateCube3D {
+  0% {
+    transform: rotateX(55deg) rotateZ(-45deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(48deg) rotateZ(-38deg) translateY(-8px);
+  }
+  100% {
+    transform: rotateX(55deg) rotateZ(-45deg) translateY(0px);
+  }
+}
+
+.animate-cube-3d {
+  animation: rotateCube3D 12s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* 3D Perspective Utility */
+.perspective-container {
+  perspective: 1200px;
+}
+
+/* Respect Accessibility Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-fade-in-up,
+  .animate-cube-3d {
+    animation: none !important;
+  }
+}
