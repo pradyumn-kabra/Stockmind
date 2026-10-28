@@ -1,4 +1,4 @@
-# StockMind — Inventory Monitoring & Anomaly Detection System (v2.1)
+# StockMind — Inventory Monitoring & Anomaly Detection System
 
 **Project Type:** Semester 3 Object-Oriented Programming (OOP) Mini Project  
 **Target Market:** Indian Wholesale & Distribution Enterprises (INR ₹, Metric Units)  
